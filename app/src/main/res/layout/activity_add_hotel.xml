@@ -15,14 +15,15 @@
         android:layout_marginEnd="109dp"
         android:layout_marginBottom="48dp"
         android:text="      add hotel"
+        android:textColorHint="@color/black"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/etName"
+        app:layout_constraintBottom_toTopOf="@+id/etNameAdd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/etName"
+        android:id="@+id/etNameAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="93dp"
@@ -30,14 +31,15 @@
         android:layout_marginBottom="24dp"
         android:ems="10"
         android:hint="hotel name"
+        android:textColorHint="@color/black"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/etCountry"
+        app:layout_constraintBottom_toTopOf="@+id/etCountryAdd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/etCountry"
+        android:id="@+id/etCountryAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="93dp"
@@ -48,12 +50,13 @@
         android:hintTextColor="#757575"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/etFloor"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/etFloorAdd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/etFloor"
+        android:id="@+id/etFloorAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="93dp"
@@ -63,24 +66,30 @@
         android:hint="floors number"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/ivCover"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/ivCoverAdd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnAddHotel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="158dp"
-        android:layout_marginEnd="135dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
         android:layout_marginBottom="89dp"
+        android:onClick="add"
         android:text="add hotel"
+        android:textColorHint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/ivCoverAdd"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivCoverAdd"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
-        android:id="@+id/ivCover"
+        android:id="@+id/ivCoverAdd"
         android:layout_width="145dp"
         android:layout_height="126dp"
         android:layout_marginStart="122dp"
@@ -93,13 +102,14 @@
 
     <Spinner
         android:id="@+id/spCategoryAddHotel"
-        android:layout_width="409dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="14dp"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/etCountryAdd"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNameAdd"
+        tools:ignore="SpeakableTextPresentCheck" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

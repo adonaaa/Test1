@@ -3,8 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/pc/AndroidStudioProjects/Test12/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/Test12/app/src/main/res/layout/Activity_add_hotel.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/Test12/app/src/main/res/layout/Activity_signup.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/Test12/app/src/main/res/layout/activity_add_hotel.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/Test12/app/src/main/res/layout/activity_all_hotels.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/Test12/app/src/main/res/layout/activity_hotel_details.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/Test12/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/Test12/app/src/main/res/layout/activity_signup.xml" value="0.264" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/Test12/app/src/main/res/layout/add_hotel.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/Test12/app/src/main/res/layout/row.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/Test12/app/src/main/res/layout/row_hotel.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

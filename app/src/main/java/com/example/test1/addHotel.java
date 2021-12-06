@@ -4,9 +4,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
+import android.icu.util.ULocale;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -18,53 +22,65 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.core.View;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.Locale;
 
-    public class addHotel extends AppCompatActivity {
+public class addHotel extends AppCompatActivity {
 
-        private static final String TAG = "AddHotel";
-        private EditText etName, etCountry, etFloor;
-        private Spinner spCategory;
-        private ImageView ivCover;
-        private FirebaseServices fbs;
+    private static final String TAG = "AddHotel";
+    private EditText etName, etCountry, etFloor;
+    private Spinner spCategory;
+    private ImageView ivCover;
+    private FirebaseServices fbs;
+    private Uri filePath;
+    StorageReference storageReference;
 
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity);
-            etName = findViewById(R.id.etName);
-            etCountry = findViewById(R.id.etCountry);
-            etFloor = findViewById(R.id.etFloor);
-            spCategory = findViewById(R.id.spCategoryAddHotel);
-            ivCover = findViewById(R.id.ivCover);
-            fbs = FirebaseServices.getInstance();
-            spCategory.setAdapter(new ArrayAdapter<HotelCategory>(this, android.R.layout.simple_list_item_1, spCategryAddHotel.values()));
-        }
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_add_hotel);
+        getSupportActionBar().hide();
+        connectComponents();
+    }
 
-        public void add(View View) {
-            String name, country , category, photo , floor;
+    private void connectComponents() {
+
+        etName = findViewById(R.id.etNameAdd);
+        etCountry = findViewById(R.id.etCountryAdd);
+        etFloor = findViewById(R.id.etFloorAdd);
+        spCategory = findViewById(R.id.spCategoryAddHotel);
+        ivCover = findViewById(R.id.ivCoverAdd);
+        fbs = FirebaseServices.getInstance();
+        spCategory.setAdapter(new ArrayAdapter<HotelCategory>(this, android.R.layout.simple_list_item_1, HotelCategory.values()));
+        storageReference = fbs.getStorage().getReference();
+    }
+
+
+        public void add(View view)
+        {
+            String name, country, category, photo;
+            int floor;
             name = etName.getText().toString();
             country = etCountry.getText().toString();
-            floor = etFloor.getText().toString();
+            floor = Integer.parseInt(etFloor.getText().toString());
             category = spCategory.getSelectedItem().toString();
             if (ivCover.getDrawable() == null)
                 photo = "no_image";
             else photo = ivCover.getDrawable().toString();
 
-            if (name.trim().isEmpty() || country.trim().isEmpty() || floor.trim().isEmpty()
+            if (name.trim().isEmpty() || country.trim().isEmpty() || String.valueOf(floor).trim().isEmpty()
                     || category.trim().isEmpty() || photo.trim().isEmpty()) {
                 Toast.makeText(this, "Some fields are empty!", Toast.LENGTH_SHORT).show();
                 return;
             }
 
-            hotels hotel = new hotels(name, country , floor, spCategory.valueOf(category));
+            hotels hotel = new hotels(name, country, floor, HotelCategory.valueOf(category), photo);
             fbs.getFire().collection("hotels")
-                    .add(hotels)
+                    .add(hotel)
                     .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                         @Override
                         public void onSuccess(DocumentReference documentReference) {
@@ -97,32 +113,9 @@ import java.io.IOException;
                 }
             });
         }
+}
 
-        public void selectPhoto(View view) {
-            Intent intent = new Intent();
-            intent.setType("image/*");
-            intent.setAction(Intent.ACTION_GET_CONTENT);
-            startActivityForResult(Intent.createChooser(intent, "Select Picture"),40);
-        }
 
-        public void onActivityResult(int requestCode, int resultCode, Intent data) {
-            super.onActivityResult(requestCode, resultCode, data);
-            if (requestCode == 40) {
-                if (resultCode == Activity.RESULT_OK) {
-                    if (data != null) {
-                        try {
-                            Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), data.getData());
-                            ivCover.setBackground(null);
-                            ivCover.setImageBitmap(bitmap);
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                } else if (resultCode == Activity.RESULT_CANCELED)  {
-                    Toast.makeText(this, "Canceled", Toast.LENGTH_SHORT).show();
-                }
-            }
-        }
-    }
+
 
 

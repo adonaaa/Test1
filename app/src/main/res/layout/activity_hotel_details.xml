@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HotelDetailsActivity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="137dp"
+        android:layout_height="40dp"
+        android:hint="Hotel Name"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="115dp"
+        tools:layout_editor_absoluteY="85dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="123dp"
+        android:layout_height="41dp"
+        android:hint="Country"
+        android:text="TextView"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="126dp"
+        tools:layout_editor_absoluteY="149dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="125dp"
+        android:layout_height="37dp"
+        android:text="TextView"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="130dp"
+        tools:layout_editor_absoluteY="219dp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="120dp"
+        android:layout_height="37dp"
+        android:text="TextView"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="142dp"
+        tools:layout_editor_absoluteY="273dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="137dp"
+        tools:layout_editor_absoluteY="354dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="whatsApp"
+        tools:layout_editor_absoluteX="158dp"
+        tools:layout_editor_absoluteY="517dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Call"
+        tools:layout_editor_absoluteX="160dp"
+        tools:layout_editor_absoluteY="574dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SMS"
+        tools:layout_editor_absoluteX="163dp"
+        tools:layout_editor_absoluteY="634dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

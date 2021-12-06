@@ -1,19 +1,18 @@
 package com.example.test1;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 
-public class MainActivity extends AppCompatActivity {
+public  class SignUpActivity extends AppCompatActivity {
 
     private EditText etUsername,etPassword;
     private Utilities utils;
@@ -34,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
         fbs = FirebaseServices.getInstance();
     }
 
-    public void login(View view) {
+    public void signup(View view) {
+
         String username = etUsername.getText().toString();
         String password = etPassword.getText().toString();
 
@@ -50,34 +50,20 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        fbs.getAuth().signInWithEmailAndPassword(username, password)
+        fbs.getAuth().createUserWithEmailAndPassword(username, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Intent i = new Intent(MainActivity.this, AllHotels.class);
-                            startActivity(i);
+                            Toast.makeText(SignUpActivity.this, "welcome", Toast.LENGTH_SHORT).show();
 
                         } else {
                             // TODO: what to do if fails
+                            Toast.makeText(SignUpActivity.this, "signing up did not succeed ", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
-    }
 
-    public void gotoSignup(View view) {
-        Intent i = new Intent(this, SignUpActivity.class);
-        startActivity(i);
-    }
 
-    public void gotoAddRest(View view) {
-        Intent i = new Intent(this, addHotel.class);
-        startActivity(i);
     }
-
-    public void gotoAllRests(View view) {
-        Intent i = new Intent(this, AllHotels.class);
-        startActivity(i);
-    }
-
 }

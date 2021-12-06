@@ -1,9 +1,11 @@
 package com.example.test1;
-
+enum HotelCategory {
+    oneStar , towStars , threeStars , fourStars , fiveStars
+}
 public class hotels {
     private int rooms;
     private boolean pool;
-    private String RoomType;
+    private String Name;
     private boolean wifi;
     private boolean parking;
     private boolean roomServices;
@@ -13,17 +15,28 @@ public class hotels {
     private boolean massage;
     private boolean pingPong;
     private boolean spa;
+    private String country;
+    private int floors;
+    private HotelCategory hotelCategory;
+    private String photo;
 
-    public hotels() {
+
+    public hotels(String Name,String country,int floors ,HotelCategory hotelCategory , String photo)
+    {
+        this.Name = Name;
+        this.floors = floors ;
+        this.country = country;
+        this.hotelCategory = hotelCategory ;
+        this.photo = photo ;
     }
 
-
-
-
-    public hotels(int rooms, boolean pool, String roomType, boolean wifi, boolean parking, boolean roomServices, boolean restaurant, boolean hotTub, boolean gym, boolean massage, boolean pingPong, boolean spa) {
+    public hotels(int rooms, boolean pool, String Name, boolean wifi, boolean parking,
+                  boolean roomServices, boolean restaurant, boolean hotTub,
+                  boolean gym, boolean massage, boolean pingPong, boolean spa)
+    {
         this.rooms = rooms;
         this.pool = pool;
-        RoomType = roomType;
+        this.Name = Name;
         this.wifi = wifi;
         this.parking = parking;
         this.roomServices = roomServices;
@@ -33,8 +46,8 @@ public class hotels {
         this.massage = massage;
         this.pingPong = pingPong;
         this.spa = spa;
-    }
 
+    }
 
 
     public int getRooms() {
@@ -53,12 +66,12 @@ public class hotels {
         this.pool = pool;
     }
 
-    public String getRoomType() {
-        return RoomType;
+    public String getName() {
+        return Name;
     }
 
-    public void setRoomType(String roomType) {
-        RoomType = roomType;
+    public void setName(String Name) {
+        Name = Name;
     }
 
     public boolean isWifi() {
@@ -140,7 +153,7 @@ public class hotels {
         return "hotels{" +
                 "rooms=" + rooms +
                 ", pool=" + pool +
-                ", RoomType='" + RoomType + '\'' +
+                ", Name='" + Name + '\'' +
                 ", wifi=" + wifi +
                 ", parking=" + parking +
                 ", roomServices=" + roomServices +
