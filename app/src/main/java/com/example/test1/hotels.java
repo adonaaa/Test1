@@ -20,6 +20,9 @@ public class hotels {
     private HotelCategory hotelCategory;
     private String photo;
 
+    public String getPhoto() {
+        return photo;
+    }
 
     public hotels(String Name,String country,int floors ,HotelCategory hotelCategory , String photo)
     {

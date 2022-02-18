@@ -19,6 +19,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
     private Adapter.ItemClickListener mClickListener;
     ImageView ivPhoto;
     private FirebaseServices fbs;
+    private Context context ;
 
     // data is passed into the constructor
     Adapter(Context context, List<hotels> data) {
