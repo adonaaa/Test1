@@ -23,26 +23,25 @@
 
     <EditText
         android:id="@+id/etUsernameSignup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="236dp"
+        android:layout_height="48dp"
         android:layout_marginStart="66dp"
-        android:layout_marginTop="37dp"
         android:layout_marginEnd="67dp"
-        android:layout_marginBottom="22dp"
+        android:layout_marginBottom="256dp"
         android:ems="10"
         android:hint="username"
-        android:textColorHint="#78909C"
         android:inputType="textPersonName"
+        android:textColorHint="#78909C"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/etPasswordSignup"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/etPasswordSignup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="247dp"
+        android:layout_height="52dp"
         android:layout_marginStart="66dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="67dp"
@@ -53,18 +52,17 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.44"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etUsernameSignup" />
+        app:layout_constraintTop_toBottomOf="@+id/etUsernameSignup"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="262dp"
-        android:layout_height="391dp"
-        android:layout_marginStart="66dp"
-        android:layout_marginEnd="83dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        android:id="@+id/imageView4"
+        android:layout_width="201dp"
+        android:layout_height="141dp"
+        app:srcCompat="@drawable/hotel1"
+        tools:layout_editor_absoluteX="51dp"
+        tools:layout_editor_absoluteY="39dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
