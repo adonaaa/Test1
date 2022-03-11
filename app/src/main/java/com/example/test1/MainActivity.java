@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -22,21 +23,21 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup);
+        setContentView(R.layout.activity_main);
 
         connectComponents();
     }
 
     private void connectComponents() {
-        etUsername = findViewById(R.id.etUsernameSignup);
-        etPassword = findViewById(R.id.etPasswordSignup);
+        etUsername = findViewById(R.id.etUsernameMain);
+        etPassword = findViewById(R.id.etPasswordMain);
         utils = Utilities.getInstance();
         fbs = FirebaseServices.getInstance();
     }
 
     public void login(View view) {
-        String username = etUsername.getText().toString();
-        String password = etPassword.getText().toString();
+        String username = etUsername.getText().toString().trim();
+        String password = etPassword.getText().toString().trim();
 
         if (username.trim().isEmpty() || password.trim().isEmpty())
         {
@@ -60,6 +61,11 @@ public class MainActivity extends AppCompatActivity {
 
                         } else {
                             // TODO: what to do if fails
+                            if(task.getException().getMessage() != null)
+                            {
+                                Log.e("Firebase failed:", "onComplete: ",task.getException());
+                            }
+                            Toast.makeText(MainActivity.this, "can not log in", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -70,13 +76,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void gotoAddRest(View view) {
-        Intent i = new Intent(this, addHotel.class);
+    public void gotoaddHotel(View view) {
+        Intent i = new Intent(MainActivity.this, addHotel.class);
         startActivity(i);
     }
 
-    public void gotoAllRests(View view) {
-        Intent i = new Intent(this, AllHotels.class);
+    public void gotoAllHotels(View view) {
+        Intent i = new Intent(MainActivity.this, AllHotels.class);
         startActivity(i);
     }
 
