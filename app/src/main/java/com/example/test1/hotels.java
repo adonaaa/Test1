@@ -19,18 +19,22 @@ public class hotels {
     private int floors;
     private HotelCategory hotelCategory;
     private String photo;
+    private String phone;
+    private String description;
+    private String address;
 
     public String getPhoto() {
         return photo;
     }
 
-    public hotels(String Name,String country,int floors ,HotelCategory hotelCategory , String photo)
-    {
-        this.Name = Name;
-        this.floors = floors ;
-        this.country = country;
-        this.hotelCategory = hotelCategory ;
-        this.photo = photo ;
+    public hotels(String name, String description, String address,
+                      HotelCategory category, String photo, String phone) {
+        this.Name = name;
+        this.description = description;
+        this.address = address;
+        this.hotelCategory = category;
+        this.photo = photo;
+        this.phone = phone;
     }
 
     public hotels(int rooms, boolean pool, String Name, boolean wifi, boolean parking,
@@ -147,6 +151,38 @@ public class hotels {
 
     public void setSpa(boolean spa) {
         this.spa = spa;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public HotelCategory getCategory() {
+        return hotelCategory;
+    }
+
+    public void setCategory(HotelCategory category) {
+        this.hotelCategory = category;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
 

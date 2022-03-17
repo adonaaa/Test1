@@ -79,7 +79,7 @@ public class addHotel extends AppCompatActivity {
             return;
         }
 
-        hotels hotel = new hotels(name, description, address, .valueOf(category), photo, phone);
+        hotels hotel = new hotels(name, description, address, HotelCategory.valueOf(category), photo, phone);
         fbs.getFire().collection("restaurants")
                 .add(hotel)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
