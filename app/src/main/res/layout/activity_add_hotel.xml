@@ -79,12 +79,16 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="101dp"
         android:layout_marginEnd="101dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="28dp"
+        android:background="#03A9F4"
+        android:backgroundTint="#03A9F4"
         android:onClick="add"
         android:text="add hotel"
         android:textColorHint="@color/black"
+        app:iconTint="#03A9F4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
@@ -97,7 +101,10 @@
         app:layout_constraintBottom_toTopOf="@+id/btnAddHotel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/addingphoto" />
+        app:srcCompat="@drawable/addingphoto"
+        android:onClick="selectPhoto"
+
+        />
 
     <Spinner
         android:id="@+id/spCategoryAddHotel"
