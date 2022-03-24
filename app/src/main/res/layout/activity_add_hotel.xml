@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".addHotel">
 
 
@@ -80,8 +81,7 @@
         android:layout_marginStart="101dp"
         android:layout_marginEnd="101dp"
         android:layout_marginBottom="28dp"
-        android:background="#03A9F4"
-        android:backgroundTint="#03A9F4"
+        android:backgroundTint="#FFC107"
         android:onClick="add"
         android:text="add hotel"
         android:textColorHint="@color/black"
@@ -89,7 +89,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="#FFEB3B"
+        app:strokeColor="#FFEB3B" />
 
     <ImageView
         android:id="@+id/ivCoverAdd"
@@ -98,11 +100,11 @@
         android:layout_marginStart="110dp"
         android:layout_marginEnd="110dp"
         android:layout_marginBottom="18dp"
+        android:onClick="selectPhoto"
         app:layout_constraintBottom_toTopOf="@+id/btnAddHotel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/addingphoto"
-        android:onClick="selectPhoto"
 
         />
 

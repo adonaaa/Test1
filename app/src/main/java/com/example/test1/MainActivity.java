@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -17,6 +18,7 @@ import com.google.firebase.auth.AuthResult;
 public class MainActivity extends AppCompatActivity {
 
     private EditText etUsername,etPassword;
+    private Button signup;
     private Utilities utils;
     private FirebaseServices fbs;
 
@@ -31,8 +33,15 @@ public class MainActivity extends AppCompatActivity {
     private void connectComponents() {
         etUsername = findViewById(R.id.etUsernameMain);
         etPassword = findViewById(R.id.etPasswordMain);
+        signup = findViewById(R.id.signup);
         utils = Utilities.getInstance();
         fbs = FirebaseServices.getInstance();
+        signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoSignup(view);
+            }
+        });
     }
 
     public void login(View view) {
