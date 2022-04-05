@@ -28,13 +28,14 @@ public class hotels {
     }
 
     public hotels(String name, String description, String address,
-                      HotelCategory category, String photo, String phone) {
+                      HotelCategory category, String photo, String phone, boolean pool) {
         this.Name = name;
         this.description = description;
         this.address = address;
         this.hotelCategory = category;
         this.photo = photo;
         this.phone = phone;
+        this.pool = pool;
     }
 
     public hotels(int rooms, boolean pool, String Name, boolean wifi, boolean parking,
