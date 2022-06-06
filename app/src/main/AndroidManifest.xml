@@ -9,8 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Test1">
-        <activity android:name=".AllHotels" android:exported="true"/>
-        <activity android:name=".addHotel" android:exported="true"/>
+        <activity
+            android:name=".TestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AllHotels"
+            android:exported="true" />
+        <activity
+            android:name=".addHotel"
+            android:exported="true" />
         <activity
             android:name=".SignUpActivity"
             android:exported="true" />

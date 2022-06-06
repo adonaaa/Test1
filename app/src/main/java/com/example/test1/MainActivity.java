@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText etUsername,etPassword;
     private Button signup;
-    private Utilities utils;
+    private SignUpActivity.Utilities utils;
     private FirebaseServices fbs;
 
     @Override
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         etUsername = findViewById(R.id.etUsernameMain);
         etPassword = findViewById(R.id.etPasswordMain);
         signup = findViewById(R.id.signup);
-        utils = Utilities.getInstance();
+        utils = SignUpActivity.Utilities.getInstance();
         fbs = FirebaseServices.getInstance();
         signup.setOnClickListener(new View.OnClickListener() {
             @Override

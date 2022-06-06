@@ -1,8 +1,8 @@
 package com.example.test1;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -21,10 +21,18 @@ public  class SignUpActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        try {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_signup);
 
-        connectComponents();
+            connectComponents();
+            Log.i("ggg", "Launch signup successfull");
+        }
+        catch (Exception ex)
+        {
+            Log.i("ggg", ex.getMessage());
+        }
+
     }
 
     private void connectComponents() {
@@ -67,5 +75,35 @@ public  class SignUpActivity extends AppCompatActivity {
                 });
 
 
+    }
+
+    public static class Utilities {
+        private static Utilities instance;
+
+        public Utilities()
+        {}
+
+        public static Utilities getInstance()
+        {
+            if (instance == null)
+                instance = new Utilities();
+
+            return instance;
+        }
+
+        public boolean validateEmail(String username)
+        {
+            return true;
+        }
+
+        public boolean validatePassword(String password)
+        {
+            return true;
+        }
+
+        public boolean checkTrimEmpty(String text)
+        {
+            return text.trim().isEmpty();
+        }
     }
 }

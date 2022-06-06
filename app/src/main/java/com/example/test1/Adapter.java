@@ -1,6 +1,7 @@
 package com.example.test1;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +41,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
         fbs = FirebaseServices.getInstance();
         StorageReference ref = fbs.getStorage().getReference().child("images/");
         hotels hotels = mData.get(position);
+        Log.d("HotelsAdapter", hotels.toString());
         holder.tvName.setText(hotels.getName());
         //Glide.with().load("http://goo.gl/gEgYUd").into(ivPhoto);
     }
@@ -58,7 +60,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
         ViewHolder(View itemView) {
             super(itemView);
             tvName = itemView.findViewById(R.id.tvNameHotelRow);
-            ivPhoto = itemView.findViewById(R.id.ivPhotoHotelRow);
+//            ivPhoto = itemView.findViewById(R.id.ivPhotoHotelRow);
             itemView.setOnClickListener(this);
         }
 

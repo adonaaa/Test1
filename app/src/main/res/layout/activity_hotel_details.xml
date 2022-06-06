@@ -90,6 +90,7 @@
         android:layout_marginStart="105dp"
         android:layout_marginTop="63dp"
         android:layout_marginEnd="98dp"
+        android:background="#00BCD4"
         android:text="whatsApp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -124,14 +125,20 @@
 
     <Button
         android:id="@+id/btnSMSHotelDetails"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="123dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="109dp"
+        android:background="#FFC107"
+        android:backgroundTint="#FFC107"
+        android:shadowColor="#00BCD4"
         android:text="SMS"
         app:layout_constraintBottom_toTopOf="@+id/btnWhatsappHotelDetails"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivPhotoHotelDetails" />
+        app:layout_constraintTop_toBottomOf="@+id/ivPhotoHotelDetails"
+        app:rippleColor="#00BCD4"
+        app:strokeColor="#00BCD4" />
 </androidx.constraintlayout.widget.ConstraintLayout>

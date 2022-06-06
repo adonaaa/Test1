@@ -53,7 +53,7 @@ public class AdapterHotel extends RecyclerView.Adapter<AdapterHotel.ViewHolder> 
         ViewHolder(View itemView) {
             super(itemView);
             tvName = itemView.findViewById(R.id.tvNameHotelRow);
-            ivPhoto = itemView.findViewById(R.id.ivPhotoHotelRow);
+//            ivPhoto = itemView.findViewById(R.id.ivPhotoHotelRow);
             itemView.setOnClickListener(this);
         }
 

@@ -21,8 +21,10 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/etDescriptionAddHotel"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/etNameAdd"
@@ -30,7 +32,7 @@
         android:layout_height="39dp"
         android:layout_marginStart="59dp"
         android:layout_marginEnd="63dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="hotel name"
         android:inputType="textPersonName"
@@ -38,6 +40,7 @@
         android:textColorHint="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/etPhoneAddHotel"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
@@ -76,15 +79,17 @@
 
     <Button
         android:id="@+id/btnAddHotel"
+        android:backgroundTint="#FFC107"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="101dp"
         android:layout_marginEnd="101dp"
         android:layout_marginBottom="28dp"
-        android:backgroundTint="#FFC107"
+        android:background="@drawable/rounded"
         android:onClick="add"
         android:text="add hotel"
-        android:textColorHint="@color/black"
+        android:textColorHint="#FFC107"
+        app:icon="@color/teal_200"
         app:iconTint="#03A9F4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -131,6 +136,7 @@
         android:hint="phone..."
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:textColorHint="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/etAddressAddHotel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
