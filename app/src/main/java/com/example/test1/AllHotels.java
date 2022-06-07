@@ -18,13 +18,15 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class AllHotels extends AppCompatActivity {
 
-    private RecyclerView rv;
+    private RecyclerView rvRestsAllHotel;
     private FirebaseServices fbs;
-    private ArrayList<hotels> hotelsArray = new ArrayList<>();
+    private ArrayList<hotels> hotelsArray = new ArrayList<hotels>();
     private Adapter adapter;
+    MyCallback myCallback;
 
 
 
@@ -43,7 +45,18 @@ public class AllHotels extends AppCompatActivity {
         HotelNames.add("Sheraton");
 
         fbs = FirebaseServices.getInstance();
+        hotelsArray = new ArrayList<hotels>();
         readData();
+        myCallback = new MyCallback() {
+            @Override
+            public void onCallback(List<hotels> attractionsList) {
+                RecyclerView recyclerView = findViewById(R.id.rvRestsAllHotel);
+                recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                adapter = new Adapter(getApplicationContext(), hotelsArray);
+                recyclerView.setAdapter(adapter);
+            }
+        };
+        }
 
 
 
@@ -51,7 +64,7 @@ public class AllHotels extends AppCompatActivity {
 
 //        Log.d("AllHotels", hotels.get(0).toString());
 
-    }
+
 
     private void readData() {
         fbs.getFire().collection("hotels")
@@ -64,6 +77,7 @@ public class AllHotels extends AppCompatActivity {
                         Log.d("readData", myhotel.toString());
                         hotelsArray.add(myhotel);
                     }
+
                     RecyclerView recyclerView = findViewById(R.id.rvRestsAllHotel);
                     recyclerView.setLayoutManager(new LinearLayoutManager(AllHotels.this));
                     Log.d("LengthOfArray", String.valueOf(hotelsArray.size()));

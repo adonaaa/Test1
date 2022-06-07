@@ -32,7 +32,6 @@
         android:layout_marginEnd="98dp"
         android:layout_marginBottom="5dp"
         android:hint="Country"
-        android:text="TextView"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/tvAddressHotelDetails"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,7 +46,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="98dp"
         android:layout_marginBottom="6dp"
-        android:text="TextView"
+        android:text="gym"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/tvCategoryHotelDetails"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,7 +61,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="109dp"
         android:layout_marginBottom="5dp"
-        android:text="TextView"
+        android:text="avalibale rooms"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/ivPhotoHotelDetails"
         app:layout_constraintEnd_toEndOf="parent"
@@ -125,7 +124,6 @@
 
     <Button
         android:id="@+id/btnSMSHotelDetails"
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="123dp"

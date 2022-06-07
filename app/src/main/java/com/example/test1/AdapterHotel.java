@@ -15,12 +15,14 @@ public class AdapterHotel extends RecyclerView.Adapter<AdapterHotel.ViewHolder> 
 
     private List<hotels> mData;
     private LayoutInflater mInflater;
+    private Context context;
     private AdapterHotel.ItemClickListener mClickListener;
 
     // data is passed into the constructor
     AdapterHotel(Context context, List<hotels> data) {
         this.mInflater = LayoutInflater.from(context);
         this.mData = data;
+        this.context = context;
     }
 
     // inflates the row layout from xml when needed
