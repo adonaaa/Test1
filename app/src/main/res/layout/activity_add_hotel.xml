@@ -8,6 +8,14 @@
     tools:context=".addHotel">
 
 
+    <Switch
+        android:id="@+id/switch3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="wifi"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="478dp" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="171dp"
@@ -47,9 +55,9 @@
         android:id="@+id/etAddressAddHotel"
         android:layout_width="204dp"
         android:layout_height="46dp"
-        android:layout_marginStart="61dp"
-        android:layout_marginEnd="55dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginEnd="63dp"
+        android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="Adress"
         android:inputType="textPersonName"
@@ -64,9 +72,9 @@
         android:id="@+id/etFloorAdd"
         android:layout_width="205dp"
         android:layout_height="42dp"
-        android:layout_marginStart="61dp"
-        android:layout_marginEnd="54dp"
-        android:layout_marginBottom="17dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginEnd="63dp"
+        android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="floors number"
         android:inputType="textPersonName"
@@ -79,13 +87,12 @@
 
     <Button
         android:id="@+id/btnAddHotel"
-        android:backgroundTint="#FFC107"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="101dp"
         android:layout_marginEnd="101dp"
         android:layout_marginBottom="28dp"
-        android:background="@drawable/rounded"
+        android:backgroundTint="#FFC107"
         android:onClick="add"
         android:text="add hotel"
         android:textColorHint="#FFC107"
@@ -93,7 +100,7 @@
         app:iconTint="#03A9F4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
         app:rippleColor="#FFEB3B"
         app:strokeColor="#FFEB3B" />
@@ -129,9 +136,9 @@
         android:id="@+id/etPhoneAddHotel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="53dp"
-        android:layout_marginEnd="53dp"
-        android:layout_marginBottom="7dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginEnd="63dp"
+        android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="phone..."
         android:inputType="textPersonName"
@@ -171,5 +178,13 @@
         app:layout_constraintEnd_toStartOf="@+id/ivCoverAdd"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spCategoryAddHotel" />
+
+    <Switch
+        android:id="@+id/switch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="gym"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="439dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
